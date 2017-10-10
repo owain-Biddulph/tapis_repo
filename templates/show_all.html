@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<html lang = "en">
+   <head></head>
+   <body>
+      
+      <h3>
+         Liste des transactions
+      </h3>
+      		
+      
+      <table>
+         <thead>
+            <tr>
+               <th>Produit</th>
+               <th>Acheteur</th>
+               <th>Vendeur</th>
+               <th>Heure</th>
+               <th>Quantité</th>
+            </tr>
+         </thead>
+         
+         <tbody>
+            {% for transaction in Transactions %}
+               <tr>
+                  <td>{{ transaction.product }}</td>
+                  <td>{{ transaction.buyer }}</td>
+                  <td>{{ transaction.seller }}</td>
+                  <td>{{ transaction.time }}</td>
+                  <td>{{ transaction.quantity }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+      
+   </body>
+</html>
